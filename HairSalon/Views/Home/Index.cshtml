@@ -1,0 +1,49 @@
+
+@{
+  Layout = "_Layout";
+}
+
+<body>
+  <div class="container-fluid">
+
+    <h1>Hair Salon</h1>
+    <hr>
+    @if (@Model["client"].Count == 0)
+    {
+      <h3>No clients have been added yet!</h3>
+    }
+
+    <table>
+      <tr>
+        <th><strong>Id</strong></th>
+        <th><strong>Clients</strong></th>
+        <th><strong>Stylists</strong></th>
+      </tr>
+      @* Clients will be a list of Restaurant objects from the entire database *@
+      @foreach (var client in @Model["client"])
+      {
+        <tr>
+        <th>@client.GetId()</th>
+        <th>@client.GetClientName()</th>
+        <th>
+        @foreach(var stylist in @Model["stylist"])
+        {
+          @if (@stylist.GetId() == @client.GetStylistId())
+          {
+            @stylist.GetName();
+          }
+        }
+        </th>
+        </tr>
+      }
+    </table>
+
+    <br>
+    <a href="/stylist/add">Add Stylist</a> <br>
+    <a href="/stylist/list">View Stylists</a>
+    <a href="/Client/list">View All Clients</a>
+  </div>
+  <br>
+  <br>
+
+</body>

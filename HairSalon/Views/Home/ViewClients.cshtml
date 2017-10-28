@@ -1,0 +1,32 @@
+
+@{
+  Layout = "_Layout";
+}
+
+<body>
+  <div class="container-fluid">
+
+    <h2>Client List</h2>
+    <table>
+        <tr>
+          <th>No.</th>
+          <th>All Clients</th>
+        </tr>
+        @* @if (@Model.Count == 0)
+        {
+          <h3>No Clients have been added yet!</h3>
+        } *@
+          @foreach (var client in Model)
+          {
+            <tr>
+            <th>@client.GetId()</th>
+            <th>@client.GetClientName() | <a href="/clients/@client.GetId()/edit">Edit</a> | <a href="/clients/@client.GetId()/delete">Delete</a>
+            </th>
+            </tr>
+
+          }
+      </table>
+      <br>
+      <a href="/">Homepage</a>
+  </div>
+</body>

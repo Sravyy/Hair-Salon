@@ -1,0 +1,19 @@
+
+@{
+  Layout = "_Layout";
+}
+
+<body>
+  <div class="container-fluid">
+    <h1>Add Client for @Model.GetName()</h1>
+
+    <form action="/@Model.GetName()/@Model.GetId()/clientlist" method="post">
+      <label for="client-name">New Client</label><br>
+      <input type="text" name="client-name" class="form-control">
+      <button type="submit" name="button" class="btn btn-default">Add a Client</button>
+    </form>
+
+    <a href="/@Model.GetName()/@Model.GetId()/clientlist">View All Clients</a><br>
+    <a href="/">HomePage</a>
+  </div>
+</body>
