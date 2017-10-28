@@ -3,11 +3,20 @@
   Layout = "_Layout";
 }
 
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a> |
+      <a class="nav-item nav-link" href="/stylist/list">Stylists</a> |
+      <a class="nav-item nav-link" href="/Client/list">Clients</a>
+    </div>
+  </div>
+</nav>
+
+
 <body>
   <div class="container-fluid">
-
-    <h1>Hair Salon</h1>
-    <hr>
     @if (@Model["client"].Count == 0)
     {
       <h3>No clients have been added yet!</h3>
@@ -15,9 +24,9 @@
 
     <table>
       <tr>
-        <th><strong>Id</strong></th>
-        <th><strong>Clients</strong></th>
-        <th><strong>Stylists</strong></th>
+        <th><u><strong>Id</strong></u></th>
+        <th><u><strong>Clients</strong></u></th>
+        <th><u><strong>Stylists</strong></u></th>
       </tr>
       @* Clients will be a list of Restaurant objects from the entire database *@
       @foreach (var client in @Model["client"])
@@ -39,9 +48,8 @@
     </table>
 
     <br>
-    <a href="/stylist/add">Add Stylist</a> <br>
-    <a href="/stylist/list">View Stylists</a>
-    <a href="/Client/list">View All Clients</a>
+    <strong><a class="home" href="/stylist/add">Add New Stylist</a></strong> <br>
+
   </div>
   <br>
   <br>

@@ -126,6 +126,8 @@ namespace HairSalon.Controllers
     {
       Stylist thisStylist = Stylist.Find(id);
       thisStylist.DeleteStylist();
+      // Client thisClient = Client.Find(id);
+      // thisClient.DeleteClient();
       return RedirectToAction("Index");
     }
 

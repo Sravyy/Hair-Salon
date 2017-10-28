@@ -3,6 +3,17 @@
   Layout = "_Layout";
 }
 
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a> |
+      <a class="nav-item nav-link" href="/stylist/list">Stylists</a> |
+      <a class="nav-item nav-link" href="/Client/list">Clients</a>
+    </div>
+  </div>
+</nav>
+
 <body>
   <div class="container-fluid">
 
@@ -12,10 +23,10 @@
           <th>No.</th>
           <th>All Clients</th>
         </tr>
-        @* @if (@Model.Count == 0)
+        @if (@Model.Count == 0)
         {
           <h3>No Clients have been added yet!</h3>
-        } *@
+        }
           @foreach (var client in Model)
           {
             <tr>
@@ -27,6 +38,6 @@
           }
       </table>
       <br>
-      <a href="/">Homepage</a>
+
   </div>
 </body>
