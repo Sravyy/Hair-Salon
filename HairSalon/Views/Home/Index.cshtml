@@ -29,10 +29,12 @@
         <th><u><strong>Stylists</strong></u></th>
       </tr>
       @* Clients will be a list of Restaurant objects from the entire database *@
-      @foreach (var client in @Model["client"])
+      @{
+        int i =1;
+      foreach (var client in @Model["client"])
       {
         <tr>
-        <th>@client.GetId()</th>
+        <th>@i</th>
         <th>@client.GetClientName()</th>
         <th>
         @foreach(var stylist in @Model["stylist"])
@@ -44,7 +46,9 @@
         }
         </th>
         </tr>
+        i++;
       }
+    }
     </table>
 
     <br>
