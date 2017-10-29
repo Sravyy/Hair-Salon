@@ -30,14 +30,18 @@
         {
           <h3>No stylists have been added yet!</h3>
         }
+        @{
+          int i =1;
         @foreach (var stylist in Model)
         {
           <tr>
-          <th class="tbl">@stylist.GetId()</th>
+          <th class="tbl">@i</th>
           <th class="tbl"><a href = '/@stylist.GetName()/@stylist.GetId()/clientlist'>@stylist.GetName()</a> | <a href="/stylists/@stylist.GetId()/edit">Edit</a> | <a href="/stylists/@stylist.GetId()/delete">Delete</a>
           </th>
           </tr>
+          i++;
         }
+      }
       </table>
       <br>
       <i><p>Note : Click on the Stylists to add their clients</p></i>
