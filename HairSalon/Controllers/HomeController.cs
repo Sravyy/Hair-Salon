@@ -126,8 +126,10 @@ namespace HairSalon.Controllers
     {
       Stylist thisStylist = Stylist.Find(id);
       thisStylist.DeleteStylist();
-      // Client thisClient = Client.Find(id);
-      // thisClient.DeleteClient();
+      Stylist selectedStylist = Stylist.Find(id); //Stylist is selected as an object
+      List<Client> stylistClients = selectedStylist.GetClients(); //Clients are displayed in a list
+      Client thisClient = Client.Find(id);
+      thisClient.DeleteClient();
       return RedirectToAction("Index");
     }
 

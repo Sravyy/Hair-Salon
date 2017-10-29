@@ -19,7 +19,7 @@
 <body>
   <div class="container-fluid">
 
-    <h2>Stylist List</h2>
+    <h2>All Stylists</h2>
 
     <table>
       <tr>
@@ -33,8 +33,8 @@
         @foreach (var stylist in Model)
         {
           <tr>
-          <th>@stylist.GetId()</th>
-          <th><a href = '/@stylist.GetName()/@stylist.GetId()/clientlist'>@stylist.GetName()</a> | <a href="/stylists/@stylist.GetId()/edit">Edit</a> | <a href="/stylists/@stylist.GetId()/delete">Delete</a>
+          <th class="tbl">@stylist.GetId()</th>
+          <th class="tbl"><a href = '/@stylist.GetName()/@stylist.GetId()/clientlist'>@stylist.GetName()</a> | <a href="/stylists/@stylist.GetId()/edit">Edit</a> | <a href="/stylists/@stylist.GetId()/delete">Delete</a>
           </th>
           </tr>
         }
